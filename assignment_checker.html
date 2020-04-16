@@ -1,0 +1,52 @@
+<!-- 
+Corona Simulation - basic simulation of a human transmissable virus
+Copyright (C) 2020  wbrinksma
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html>
+    <body>
+        <input type="text" id="student_nr">
+        <button id="submit">submit</button>
+        <p>Your C assignment is.... :</p>
+        <h1 id="assignment"></h1>
+
+        <script>
+            window.addEventListener("load", function() {
+                document.getElementById("submit").addEventListener("mouseup", function() {
+                    var parsedInput = parseInt(document.getElementById("student_nr").value);
+                    
+                    if(parsedInput == NaN)
+                    {
+                        document.getElementById("assignment").innerText = "Geen juist studentennummer ingevoerd!";
+                    } else
+                    {
+                        switch(parsedInput % 3) {
+                            case 0:
+                            document.getElementById("assignment").innerText = "Assignment B.1!";
+                            break;
+                            case 1:
+                            document.getElementById("assignment").innerText = "Assignment B.2!";
+                            break;
+                            case 2:
+                            document.getElementById("assignment").innerText = "Assignment B.3!";
+                            break;
+                        }
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
